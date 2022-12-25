@@ -1,0 +1,8 @@
+
+<li class="list-group-item d-flex justify-content-between"><?php echo translate('Transaction ID'); ?><span><?php echo e($transaction->trnx); ?></span></li>
+<li class="list-group-item d-flex justify-content-between"><?php echo translate('Remark'); ?><span class="badge badge-primary"><?php echo e(ucwords(str_replace('_',' ',$transaction->remark))); ?></span></li>
+<li class="list-group-item d-flex justify-content-between"><?php echo translate('Currency'); ?><span class="font-weight-bold"><?php echo e($transaction->currency->code); ?></span></li>
+<li class="list-group-item d-flex justify-content-between"><?php echo translate('Amount'); ?><span class="badge <?php echo e($transaction->type == '+' ? 'badge-success':'badge-danger'); ?>"><?php echo e($transaction->type); ?><?php echo e(amount($transaction->amount,$transaction->currency->type,2)); ?> <?php echo e($transaction->currency->code); ?></span></li>
+<li class="list-group-item d-flex justify-content-between"><?php echo translate('Charge'); ?><span><?php echo e(amount($transaction->charge,$transaction->currency->type,2)); ?> <?php echo e($transaction->currency->code); ?></span></li>
+
+<li class="list-group-item d-flex justify-content-between"><?php echo translate('Date'); ?><span><?php echo e(dateFormat($transaction->created_at,'d M y')); ?></span></li><?php /**PATH C:\xampp1\htdocs\resources\views\admin\trx_details.blade.php ENDPATH**/ ?>
